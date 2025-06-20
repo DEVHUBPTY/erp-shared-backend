@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "erp-shared"
+version = "0.1.0"
+description = "Paquete compartido entre microservicios del ERP"
+authors = ["captainsparrow10 <javier1009rm@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "shared" }]
+
+[tool.poetry.dependencies]
+# Expandimos compatibilidad a Python 3.11+ para alinear con api-gateway
+python = ">=3.11,<4.0"
+pydantic = ">=2.11.0,<3.0.0"
+email-validator = ">=2.2.0,<3.0.0"
+python-jose = { version = ">=3.4.0,<4.0.0", extras = ["cryptography"] }
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
